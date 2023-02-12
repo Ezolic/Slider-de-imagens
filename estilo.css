@@ -1,34 +1,40 @@
-body {
+* {
     margin: 0;
     padding: 0;
-}
+} 
 .container {
     height: 100vh;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.box {
-    background-color: aliceblue;
-    width: 300px;
-    height: auto;
-    overflow: hidden;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-}
-img {
+
+} .slider {
     width: 300px;
     height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid black;
+    
+} .box {
+    width: auto;
+    display: flex;
+
+}  img {
+    width: 300px;
+    height: 300px;
+
+} #atual {
+    margin-left: 0;
+    transition: all 0.5s;
 }
-.img-div {
-    display: inline-block;
-} button {
+button {
+    position: absolute;
     outline: none;
     border: none;
-    background-color: rgba(0, 0, 0, 0.354);
+    background-color: rgba(0, 0, 0, 0.61);
     border-radius: 100px;
-    position: absolute;
+    cursor: pointer;
+
 } #frente {
     margin-left: 250px;
 } #tras {
@@ -36,4 +42,9 @@ img {
 } i {
     color: #fff;
     font-size: 20px;
-}
+} 
+
+
+
+
+

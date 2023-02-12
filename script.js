@@ -1,22 +1,27 @@
-function habilita1() {
-    document.getElementById("frente").disabled = false;
-}
-function habilita2() {
-    document.getElementById("tras").disabled = false;
-}
-function frente() {
-    document.getElementById("frente").disabled = true;
+posicao = 0
+quantidadeImagem = document.querySelectorAll('.box .img-div')
+primeiraImagem = document.getElementById('atual')
+btnFrente = document.getElementById('frente')
+btnTras = document.getElementById('tras')
 
-    const items = document.querySelector('.box');
-    items.scrollBy(305, 0);
-    
-    setTimeout(habilita1, 500);
-}
-function tras() {
-    document.getElementById("tras").disabled = true;
+size = primeiraImagem.offsetWidth;  
 
-    const items = document.querySelector('.box');
-    items.scrollBy(-305, 0);
+btnFrente.addEventListener('click', () => {
+    posicao++
+    slide()
+})
 
-    setTimeout(habilita2, 500);
+btnTras.addEventListener('click', () => {
+    posicao--
+    slide()
+})
+
+function slide() {
+    if (posicao >= quantidadeImagem.length) {
+        posicao = 0
+    } else if (posicao < 0) {
+        posicao = quantidadeImagem.length-1
+    }
+
+    primeiraImagem.style.marginLeft = -size*posicao+'px'
 }
